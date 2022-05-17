@@ -29,10 +29,10 @@
 	}
 </style>
 <h1>
-<button>DING DONG</button>
-<button>DING DONG</button>
-<button>DING DONG</button>
-<button>DING DONG</button>
+<button id="button1" onclick="time1()">DING DONG</button>
+<button id="button2" onclick="time2()">DING DONG</button>
+<button id="button3" onclick="time3()">DING DONG</button>
+<button id="button4" onclick="time4()">DING DONG</button>
 </h1>
 <canvas id="stapels"></canvas>
 <p id="p1"></p>
@@ -43,14 +43,31 @@
 	var x = canvas.width;
 	var p1 = document.getElementById("p1");
 	var timer = setInterval(displayClock, 1000);
-	var timer = setInterval(update, 1000/90);
+	// var timer = setInterval(update, 1000/90);
 	var color = ctx.createLinearGradient(0, 0, 200, 0);
 	color.addColorStop(0, "white");
 	color.addColorStop(1, "green");
 
-	// ctx.clearRect(0,0, canvas.width, canvas.height);
-
-	// ctx.fillRect(0, 0, 10, 10);
+	function time1(){
+		var btn1 = document.getElementById("button1");
+		var timer = setInterval(update, 1000);
+		// clearInterval(timer);
+	}
+	function time2(){
+		var btn2 = document.getElementById("button2");
+		var timer = setInterval(update, 1000/90);
+		// clearInterval(timer);
+	}
+	function time3(){
+		var btn3 = document.getElementById("button3");
+		var timer = setInterval(update, 1000/90);
+		// clearInterval(timer);
+	}
+	function time4(){
+		var btn4 = document.getElementById("button4");
+		var timer = setInterval(update, 1000/90);
+		// clearInterval(timer);
+	}
 
 	function update() {
 		// ctx.clearRect(0,0, canvas.width, canvas.height);
