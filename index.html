@@ -1,22 +1,51 @@
+<style>
+	p {
+		display: block;
+		text-align: center;
+		font-size: 1.5em;
+	}
+	canvas {
+		display: block;
+		text-align: center;
+		width: 100%;
+		height: 10%;
+	}
+	button {
+		width: 99%;
+		margin: 10px;
+		text-align: center;
+	}
+</style>
+<button>DING DONG</button>
+<button>DING DONG</button>
+<button>DING DONG</button>
+<button>DING DONG</button>
 <canvas id="stapels"></canvas>
+<p id="p1"></p>
 <script>
 	var canvas= document.getElementById("stapels");
 	var ctx = canvas.getContext("2d");
 	var y = canvas.height;
 	var x = canvas.width;
+	var p1 = document.getElementById("p1");
+	var timer = setInterval(displayClock, 1000);
+	var timer = setInterval(update, 1000/90);
 
-	ctx.clearRect(0,0, canvas.width, canvas.height);
+	// ctx.clearRect(0,0, canvas.width, canvas.height);
 
-	ctx.fillRect(0, 0, 10, 10);
+	// ctx.fillRect(0, 0, 10, 10);
 
 	function update() {
-		ctx.clearRect(0,0, canvas.width, canvas.height);
-		ctx.fillRect(x, y, 50, 50);
+		// ctx.clearRect(0,0, canvas.width, canvas.height);
+		ctx.fillRect(x, 0, x, y);
 		x--;
-		y--;
+		// y--;
 	}
 
-	var timer = setInterval(update, 1000/60);
+	function displayClock() {
+		var now = new Date();
+		p1.innerText = now;
+	}
 
-	
+
 </script>
