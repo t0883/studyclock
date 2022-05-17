@@ -1,8 +1,8 @@
 <style>
 	h1 {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 100px 1fr max-content;
+		grid-template-columns: repeat(4, 1fr [col-start]);
+		grid-template-rows: auto;
 	}
 	p {
 		display: block;
@@ -24,7 +24,8 @@
 		background-color: #99ff99;
 		text-align: center;
 		display: grid;
-		grid-template-rows: 4;
+		justify-self: stretch;
+		align-self: stretch;
 	}
 </style>
 <h1>
