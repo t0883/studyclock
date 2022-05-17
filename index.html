@@ -1,4 +1,9 @@
 <style>
+	h1 {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 100px 1fr max-content;
+	}
 	p {
 		display: block;
 		text-align: center;
@@ -9,17 +14,25 @@
 		text-align: center;
 		width: 100%;
 		height: 10%;
+		color: #99ff99;
 	}
 	button {
-		width: 99%;
+		width: inherit;
 		margin: 10px;
+		padding: 30px;
+		border: 2px #99ff66;
+		background-color: #99ff99;
 		text-align: center;
+		display: grid;
+		grid-template-rows: 4;
 	}
 </style>
+<h1>
 <button>DING DONG</button>
 <button>DING DONG</button>
 <button>DING DONG</button>
 <button>DING DONG</button>
+</h1>
 <canvas id="stapels"></canvas>
 <p id="p1"></p>
 <script>
@@ -30,6 +43,9 @@
 	var p1 = document.getElementById("p1");
 	var timer = setInterval(displayClock, 1000);
 	var timer = setInterval(update, 1000/90);
+	var color = ctx.createLinearGradient(0, 0, 200, 0);
+	color.addColorStop(0, "white");
+	color.addColorStop(1, "green");
 
 	// ctx.clearRect(0,0, canvas.width, canvas.height);
 
@@ -37,6 +53,7 @@
 
 	function update() {
 		// ctx.clearRect(0,0, canvas.width, canvas.height);
+		ctx.fillStyle = color;
 		ctx.fillRect(x, 0, x, y);
 		x--;
 		// y--;
